@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect,get_object_or_404
 from store.models import Product
 from .models import Cart, CartItem
+from django.core.exceptions import ObjectDoesNotExist
 
 # Create your views here.
 def _cart_id(request):
@@ -62,7 +63,7 @@ def cart(request, quantity=0, cart_items=None):
         for cart_item in cart_items:
             quantity += cart_item.quantity
 
-    except ObjectNotExist:
+    except ObjectDoesNotExist:
         pass
 
     context = {
