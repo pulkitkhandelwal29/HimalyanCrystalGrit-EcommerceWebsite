@@ -141,7 +141,7 @@
 				<div class="fix-height">
 					<a href="{{ product.get_url }}" class="title">{{ product.product_name }}</a>
 				</div>
-				<a href="#" class="btn btn-block btn-primary">Add to Cart </a>
+				<a href="{% url 'add_cart' product.id %}" class="btn btn-block btn-primary">Add to Cart </a>
 			</figcaption>
 		</figure>
 	</div> <!-- col.// -->
