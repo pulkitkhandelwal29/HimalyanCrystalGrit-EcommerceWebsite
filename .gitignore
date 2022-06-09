@@ -6,7 +6,7 @@ __pycache__
 db.sqlite3
 media
 static
-himalyancrystalgrit\static\
+himalyancrystalgrit\static
 
 # Backup files # 
 *.bak 
