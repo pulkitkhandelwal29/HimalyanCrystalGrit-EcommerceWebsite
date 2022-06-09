@@ -71,3 +71,22 @@ def cart(request, quantity=0, cart_items=None):
     'cart_items' : cart_items,
     }
     return render(request, 'store/cart.html',context)
+
+
+
+def checkout(request, quantity=0, cart_items=None):
+    try:
+        cart = Cart.objects.get(cart_id = _cart_id(request))
+        cart_items = CartItem.objects.filter(cart=cart)
+        for cart_item in cart_items:
+            quantity += cart_item.quantity
+
+    except ObjectDoesNotExist:
+        pass
+
+    context = {
+    'quantity' : quantity,
+    'cart_items' : cart_items,
+    }
+
+    return render(request, 'store/checkout.html', context)
