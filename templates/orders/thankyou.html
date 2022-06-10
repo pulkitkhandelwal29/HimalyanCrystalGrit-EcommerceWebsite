@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="section-content padding-y bg">
+<div class="container">
+
+<!-- ============================ COMPONENT 1 ================================= -->
+<div class="row">
+	<aside class="col-lg-12">
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title text-center mb-4">Thank you for placing the order.<br><br><br> We will contact you soon via Whatsapp!</h4>
+		<script>
+			setTimeout(function(){
+					 window.location.href = "{% url 'home' %}";
+				}, 5000);
+	</script>
+
+</div> <!-- card.// -->
+
+	</aside> <!-- col.// -->
+
+
+</div> <!-- row.// -->
+<!-- ============================ COMPONENT 1 END .// ================================= -->
+
+</div> <!-- container .//  -->
+</section>
+<!-- ========================= SECTION CONTENT END// ========================= -->
+
+
+{% endblock %}
