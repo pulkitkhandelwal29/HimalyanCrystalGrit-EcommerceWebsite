@@ -31,7 +31,11 @@
 
 <h2 class="title">{{ single_product.product_name }}</h2>
 
-<p>{{ single_product.description }}</p>
+<ul class="list-group">
+	{% for line in lines %}
+  <li class="list-group-item">{{ line }}</li>
+{% endfor %}
+</ul>
 
 
 	<hr>

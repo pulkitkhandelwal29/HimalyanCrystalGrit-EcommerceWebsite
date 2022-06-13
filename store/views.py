@@ -43,8 +43,11 @@ def product_detail(request, category_slug, product_slug):
 
     product_gallery = ProductGallery.objects.filter(product_id = single_product.id)
 
+    lines = single_product.description.split(",")
+
     context = {
     'single_product' : single_product,
+    'lines' : lines,
     'in_cart' : in_cart,
     'product_gallery' : product_gallery,
     }
@@ -59,6 +62,11 @@ def search(request):
         if keyword:
             products = Product.objects.order_by('-created_date').filter(Q(description__icontains=keyword) | Q(product_name__icontains=keyword))
             product_count = products.count()
+        else:
+            keyword='Nothing'
+            products = Product.objects.order_by('-created_date').filter(Q(description__icontains=keyword) | Q(product_name__icontains=keyword))
+            product_count = products.count()
+
     context = {
         'products' : products,
         'product_count' : product_count,
