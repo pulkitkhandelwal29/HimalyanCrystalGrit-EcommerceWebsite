@@ -90,6 +90,17 @@ DATABASES = {
     }
 }
 
+#Production
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': '<your_username>$<your_database_name>',
+#         'USER': '<your_username>',
+#         'PASSWORD': '<your_mysql_password>',
+#         'HOST': '<your_mysql_hostname>',
+#     }
+# }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
